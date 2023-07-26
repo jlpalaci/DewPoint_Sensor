@@ -53,7 +53,7 @@ int main()
              << "DewPt: " << setprecision(4) << H21Dew << "C" 
              << endl;
         thread_sleep_for(1000);
-        //wait(1.0);
+        //wait(1.0); //Adiciono este texto por aquí...
    }
 
 }
