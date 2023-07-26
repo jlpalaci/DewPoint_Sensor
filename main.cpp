@@ -16,9 +16,6 @@ using namespace std;
 
 Serial pc(USBTX, USBRX);                    //local terminal
 htu21d htu(SDA, SCL);                       //Temp Hum || sda, scl
-DigitalOut LedRojo(LED1,1);
-DigitalOut LedAzul(LED3,1);
-DigitalOut LedVerde(LED2,1);
  
 float H21Temp = 0.0;                        //Temperture from HTU21D
 float H21Hum  = 0.0;                        //Humidity from HTU21D
@@ -57,27 +54,6 @@ int main()
              << endl;
         thread_sleep_for(1000);
         //wait(1.0);
-        if(H21Temp > 24.0) {
-            LedRojo = 0;
-            LedAzul = 1;
-            LedVerde = 1;
-        } 
-        else if (H21Temp > 20.0 && H21Temp < 24.0){ 
-            LedAzul = 1;
-            LedRojo = 1;
-            LedVerde = 0;
-        }
-        else if (H21Temp < 20.0){ 
-            LedAzul = 0;
-            LedRojo = 1;
-            LedVerde = 1;
-        }
-        else{ 
-            LedAzul = 1;
-            LedRojo = 1;
-            LedVerde = 1;
-        }
-      
-    }
+   }
 
 }
